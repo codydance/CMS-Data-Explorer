@@ -80,14 +80,13 @@ Streamlit app: http://localhost:8501
 The pipeline is automatically triggered with "docker-compose up --build". Further runs can be triggered from the Airflow UI. 
 
 # Check PostgreSQL Database:
-docker-compose exec postgres psql -U cms_user -d cms_db
+docker-compose exec postgres psql -U user -d cms_data_db
 
 Example Queries:
 
-    \dt (list tables)
+\dt (list tables)
 
-
-    SELECT * FROM cms_data LIMIT 10;
+SELECT * FROM cms_data LIMIT 10;
 
 # Development Notes
 Volumes: A 'pgdata' Docker volume is used for PostgreSQL persistence.
