@@ -24,9 +24,13 @@ Docker and Docker Compose installed
 
 # Project Structure
 cms-data-pipeline/
+
 ├── dags/                     # Airflow DAGs
+
 │   └── cms_etl_dag.py
+
 ├── data/                     # Populated by the DAG
+
 │   └── raw_data.csv
 ├── dbt/                      # dbt models and config
 │   ├── models/
