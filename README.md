@@ -86,6 +86,7 @@ Example Queries:
 
     \dt (list tables)
 
+
     SELECT * FROM cms_data LIMIT 10;
 
 # Development Notes
