@@ -32,19 +32,33 @@ cms-data-pipeline/
 ├── data/                     # Populated by the DAG
 
 │   └── raw_data.csv
+
 ├── dbt/                      # dbt models and config
+
 │   ├── models/
+
 │   │   ├── cost_by_city_and_state.sql
+
 │   │   └── distinct_drgs.sql
+
 │   └── dbt_project.yml
+
 │   └── profiles.yml
+
 ├── scripts/                  # ETL scripts
+
 │   └── cms_etl.py
+
 ├── streamlit/                # Streamlit visualization app
+
 │   └── app.py
+
 ├── docker-compose.yml
+
 ├── dockerfile.airflow
+
 ├── dockerfile.streamlit
+
 └── README.md
 
 
