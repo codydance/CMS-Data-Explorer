@@ -78,7 +78,7 @@ docker-compose up --build
 
 Airflow UI: http://localhost:8080 (username: admin , password: admin)
 
-Streamlit app: http://localhost:8501
+Streamlit app: http://localhost:8501 (wait for DAG to finish in Airflow UI before checking)
 
 # Running the Pipeline
 The pipeline is automatically triggered with "docker-compose up --build". Further runs can be triggered from the Airflow UI. 
