@@ -1,0 +1,783 @@
+[0m20:05:38.963571 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5cc46220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5b09a070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5b09afd0>]}
+
+
+============================== 20:05:38.976763 | 2f1c208b-2b73-462f-b2c8-c1db35c5c96f ==============================
+[0m20:05:38.976763 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:05:38.978385 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir .', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:05:39.405392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5a7fe550>]}
+[0m20:05:39.462754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5b6acfa0>]}
+[0m20:05:39.465194 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m20:05:39.489209 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m20:05:39.495703 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m20:05:39.497328 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5a72d460>]}
+[0m20:05:40.624582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5a252e20>]}
+[0m20:05:40.845163 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c59bbc0a0>]}
+[0m20:05:40.846761 [info ] [MainThread]: Found 2 models, 1 source, 423 macros
+[0m20:05:40.847912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5a247d30>]}
+[0m20:05:40.852446 [info ] [MainThread]: 
+[0m20:05:40.854776 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:05:40.862155 [debug] [ThreadPool]: Acquiring new postgres connection 'list_cms_data_db'
+[0m20:05:40.909349 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db"
+[0m20:05:40.910524 [debug] [ThreadPool]: On list_cms_data_db: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:05:40.911624 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:05:40.924196 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.013 seconds
+[0m20:05:40.926372 [debug] [ThreadPool]: On list_cms_data_db: Close
+[0m20:05:40.929449 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_cms_data_db, now list_cms_data_db_public)
+[0m20:05:40.938730 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m20:05:40.940157 [debug] [ThreadPool]: On list_cms_data_db_public: BEGIN
+[0m20:05:40.941449 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:05:40.950967 [debug] [ThreadPool]: SQL status: BEGIN in 0.010 seconds
+[0m20:05:40.952239 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m20:05:40.954413 [debug] [ThreadPool]: On list_cms_data_db_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db_public"} */
+select
+      'cms_data_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m20:05:40.961253 [debug] [ThreadPool]: SQL status: SELECT 43 in 0.005 seconds
+[0m20:05:40.964189 [debug] [ThreadPool]: On list_cms_data_db_public: ROLLBACK
+[0m20:05:40.965708 [debug] [ThreadPool]: On list_cms_data_db_public: Close
+[0m20:05:40.980540 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:40.981967 [debug] [MainThread]: On master: BEGIN
+[0m20:05:40.983388 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:05:40.994897 [debug] [MainThread]: SQL status: BEGIN in 0.011 seconds
+[0m20:05:40.996482 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:40.997719 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:05:41.017655 [debug] [MainThread]: SQL status: SELECT 0 in 0.018 seconds
+[0m20:05:41.020024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5cc38c10>]}
+[0m20:05:41.021745 [debug] [MainThread]: On master: ROLLBACK
+[0m20:05:41.024898 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:41.026339 [debug] [MainThread]: On master: BEGIN
+[0m20:05:41.027984 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m20:05:41.029273 [debug] [MainThread]: On master: COMMIT
+[0m20:05:41.030434 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:41.031239 [debug] [MainThread]: On master: COMMIT
+[0m20:05:41.032599 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m20:05:41.033669 [debug] [MainThread]: On master: Close
+[0m20:05:41.034900 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:05:41.037161 [info ] [MainThread]: 
+[0m20:05:41.051358 [debug] [Thread-1  ]: Began running node model.cms_dbt.cost_by_city_and_state
+[0m20:05:41.053160 [info ] [Thread-1  ]: 1 of 2 START sql table model public.cost_by_city_and_state ..................... [RUN]
+[0m20:05:41.055742 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_cms_data_db_public, now model.cms_dbt.cost_by_city_and_state)
+[0m20:05:41.057428 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.cost_by_city_and_state
+[0m20:05:41.069147 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.112816 [debug] [Thread-1  ]: Began executing node model.cms_dbt.cost_by_city_and_state
+[0m20:05:41.150897 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.193928 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.195816 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: BEGIN
+[0m20:05:41.197442 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:05:41.210975 [debug] [Thread-1  ]: SQL status: BEGIN in 0.013 seconds
+[0m20:05:41.213426 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.216658 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT
+    "DRG_Desc", 
+    "Rndrng_Prvdr_City" as "city",
+    "Rndrng_Prvdr_State_Abrvtn" AS "state",
+    AVG("Avg_Tot_Pymt_Amt") AS "avg_charge"
+FROM "cms_data_db"."public"."cms_data"
+GROUP BY "Rndrng_Prvdr_State_Abrvtn", "Rndrng_Prvdr_City", "DRG_Desc"
+  );
+  
+[0m20:05:41.607292 [debug] [Thread-1  ]: SQL status: SELECT 113493 in 0.387 seconds
+[0m20:05:41.617046 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.618593 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+alter table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp" rename to "cost_by_city_and_state"
+[0m20:05:41.620805 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:05:41.641645 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m20:05:41.643786 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.646105 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m20:05:41.659376 [debug] [Thread-1  ]: SQL status: COMMIT in 0.012 seconds
+[0m20:05:41.669298 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."cost_by_city_and_state__dbt_backup"
+[0m20:05:41.675973 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:05:41.677301 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+drop table if exists "cms_data_db"."public"."cost_by_city_and_state__dbt_backup" cascade
+[0m20:05:41.679503 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m20:05:41.683016 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: Close
+[0m20:05:41.685751 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c59255c70>]}
+[0m20:05:41.687087 [info ] [Thread-1  ]: 1 of 2 OK created sql table model public.cost_by_city_and_state ................ [[32mSELECT 113493[0m in 0.63s]
+[0m20:05:41.688285 [debug] [Thread-1  ]: Finished running node model.cms_dbt.cost_by_city_and_state
+[0m20:05:41.689332 [debug] [Thread-1  ]: Began running node model.cms_dbt.distinct_drgs
+[0m20:05:41.690949 [info ] [Thread-1  ]: 2 of 2 START sql table model public.distinct_drgs .............................. [RUN]
+[0m20:05:41.692583 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.cms_dbt.cost_by_city_and_state, now model.cms_dbt.distinct_drgs)
+[0m20:05:41.694242 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.distinct_drgs
+[0m20:05:41.698658 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.distinct_drgs"
+[0m20:05:41.724837 [debug] [Thread-1  ]: Began executing node model.cms_dbt.distinct_drgs
+[0m20:05:41.733004 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.distinct_drgs"
+[0m20:05:41.759300 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:05:41.760845 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: BEGIN
+[0m20:05:41.762037 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:05:41.770987 [debug] [Thread-1  ]: SQL status: BEGIN in 0.009 seconds
+[0m20:05:41.772150 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:05:41.773487 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."distinct_drgs__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT DISTINCT
+    "DRG_Desc"
+FROM "cms_data_db"."public"."cms_data"
+ORDER BY "DRG_Desc"
+  );
+  
+[0m20:05:41.817350 [debug] [Thread-1  ]: SQL status: SELECT 522 in 0.042 seconds
+[0m20:05:41.823105 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:05:41.824553 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+alter table "cms_data_db"."public"."distinct_drgs__dbt_tmp" rename to "distinct_drgs"
+[0m20:05:41.826763 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:05:41.829283 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m20:05:41.830499 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:05:41.831529 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m20:05:41.835701 [debug] [Thread-1  ]: SQL status: COMMIT in 0.003 seconds
+[0m20:05:41.840779 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."distinct_drgs__dbt_backup"
+[0m20:05:41.843137 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:05:41.844760 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+drop table if exists "cms_data_db"."public"."distinct_drgs__dbt_backup" cascade
+[0m20:05:41.846803 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m20:05:41.848923 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: Close
+[0m20:05:41.850523 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2f1c208b-2b73-462f-b2c8-c1db35c5c96f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5927e4c0>]}
+[0m20:05:41.852960 [info ] [Thread-1  ]: 2 of 2 OK created sql table model public.distinct_drgs ......................... [[32mSELECT 522[0m in 0.16s]
+[0m20:05:41.855692 [debug] [Thread-1  ]: Finished running node model.cms_dbt.distinct_drgs
+[0m20:05:41.860562 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:41.861921 [debug] [MainThread]: On master: BEGIN
+[0m20:05:41.863279 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:05:41.874068 [debug] [MainThread]: SQL status: BEGIN in 0.010 seconds
+[0m20:05:41.875408 [debug] [MainThread]: On master: COMMIT
+[0m20:05:41.877027 [debug] [MainThread]: Using postgres connection "master"
+[0m20:05:41.878622 [debug] [MainThread]: On master: COMMIT
+[0m20:05:41.881146 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m20:05:41.882714 [debug] [MainThread]: On master: Close
+[0m20:05:41.885178 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:05:41.886956 [debug] [MainThread]: Connection 'model.cms_dbt.distinct_drgs' was properly closed.
+[0m20:05:41.889356 [info ] [MainThread]: 
+[0m20:05:41.891575 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 1.03 seconds (1.03s).
+[0m20:05:41.893394 [debug] [MainThread]: Command end result
+[0m20:05:42.019834 [info ] [MainThread]: 
+[0m20:05:42.021736 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:05:42.023185 [info ] [MainThread]: 
+[0m20:05:42.024454 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m20:05:42.027516 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.1896992, "process_user_time": 3.151055, "process_kernel_time": 0.612878, "process_mem_max_rss": "176580", "process_in_blocks": "31280", "process_out_blocks": "1648"}
+[0m20:05:42.029923 [debug] [MainThread]: Command `dbt run` succeeded at 20:05:42.029599 after 3.19 seconds
+[0m20:05:42.031537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5cc46220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5c660e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x731c5a7fe550>]}
+[0m20:05:42.032830 [debug] [MainThread]: Flushing usage events
+[0m20:13:59.763689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717979ac73d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717979ddb5e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717979da84c0>]}
+
+
+============================== 20:13:59.780113 | be72dd93-b917-4a62-bb93-7734ec5aa500 ==============================
+[0m20:13:59.780113 [info ] [MainThread]: Running with dbt=1.8.7
+[0m20:13:59.781713 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir .', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:14:00.083031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717977ed8040>]}
+[0m20:14:00.129472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717977ea71f0>]}
+[0m20:14:00.131128 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m20:14:00.146863 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m20:14:00.444481 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:14:00.445860 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:14:00.485924 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717976dc3550>]}
+[0m20:14:00.675834 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717976dbad90>]}
+[0m20:14:00.678231 [info ] [MainThread]: Found 2 models, 1 source, 423 macros
+[0m20:14:00.680014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7179771445e0>]}
+[0m20:14:00.684681 [info ] [MainThread]: 
+[0m20:14:00.686349 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m20:14:00.694308 [debug] [ThreadPool]: Acquiring new postgres connection 'list_cms_data_db'
+[0m20:14:00.739961 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db"
+[0m20:14:00.741270 [debug] [ThreadPool]: On list_cms_data_db: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m20:14:00.742450 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:14:00.751770 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.009 seconds
+[0m20:14:00.754245 [debug] [ThreadPool]: On list_cms_data_db: Close
+[0m20:14:00.757330 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_cms_data_db, now list_cms_data_db_public)
+[0m20:14:00.765009 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m20:14:00.766271 [debug] [ThreadPool]: On list_cms_data_db_public: BEGIN
+[0m20:14:00.767314 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:14:00.775133 [debug] [ThreadPool]: SQL status: BEGIN in 0.008 seconds
+[0m20:14:00.776605 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m20:14:00.778076 [debug] [ThreadPool]: On list_cms_data_db_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db_public"} */
+select
+      'cms_data_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m20:14:00.782484 [debug] [ThreadPool]: SQL status: SELECT 43 in 0.004 seconds
+[0m20:14:00.785810 [debug] [ThreadPool]: On list_cms_data_db_public: ROLLBACK
+[0m20:14:00.787273 [debug] [ThreadPool]: On list_cms_data_db_public: Close
+[0m20:14:00.798299 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:00.799312 [debug] [MainThread]: On master: BEGIN
+[0m20:14:00.800101 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:14:00.809360 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m20:14:00.810707 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:00.811727 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m20:14:00.832122 [debug] [MainThread]: SQL status: SELECT 0 in 0.019 seconds
+[0m20:14:00.833984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717976d2f3a0>]}
+[0m20:14:00.835239 [debug] [MainThread]: On master: ROLLBACK
+[0m20:14:00.836811 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:00.837859 [debug] [MainThread]: On master: BEGIN
+[0m20:14:00.840106 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m20:14:00.841557 [debug] [MainThread]: On master: COMMIT
+[0m20:14:00.842401 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:00.843507 [debug] [MainThread]: On master: COMMIT
+[0m20:14:00.844838 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m20:14:00.845868 [debug] [MainThread]: On master: Close
+[0m20:14:00.846884 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:14:00.847687 [info ] [MainThread]: 
+[0m20:14:00.857181 [debug] [Thread-1  ]: Began running node model.cms_dbt.cost_by_city_and_state
+[0m20:14:00.858546 [info ] [Thread-1  ]: 1 of 2 START sql table model public.cost_by_city_and_state ..................... [RUN]
+[0m20:14:00.859796 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_cms_data_db_public, now model.cms_dbt.cost_by_city_and_state)
+[0m20:14:00.861001 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.cost_by_city_and_state
+[0m20:14:00.872799 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:00.902389 [debug] [Thread-1  ]: Began executing node model.cms_dbt.cost_by_city_and_state
+[0m20:14:00.942259 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:00.967806 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:00.969014 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: BEGIN
+[0m20:14:00.970965 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:14:00.982549 [debug] [Thread-1  ]: SQL status: BEGIN in 0.012 seconds
+[0m20:14:00.984186 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:00.985447 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT
+    "DRG_Desc", 
+    "Rndrng_Prvdr_City" as "city",
+    "Rndrng_Prvdr_State_Abrvtn" AS "state",
+    AVG("Avg_Tot_Pymt_Amt") AS "avg_charge"
+FROM "cms_data_db"."public"."cms_data"
+GROUP BY "Rndrng_Prvdr_State_Abrvtn", "Rndrng_Prvdr_City", "DRG_Desc"
+  );
+  
+[0m20:14:01.363035 [debug] [Thread-1  ]: SQL status: SELECT 113493 in 0.376 seconds
+[0m20:14:01.372042 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:01.373375 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+alter table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp" rename to "cost_by_city_and_state"
+[0m20:14:01.375557 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m20:14:01.401509 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m20:14:01.402903 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:01.404517 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m20:14:01.420586 [debug] [Thread-1  ]: SQL status: COMMIT in 0.014 seconds
+[0m20:14:01.428507 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."cost_by_city_and_state__dbt_backup"
+[0m20:14:01.434323 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m20:14:01.435928 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+drop table if exists "cms_data_db"."public"."cost_by_city_and_state__dbt_backup" cascade
+[0m20:14:01.438495 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m20:14:01.442761 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: Close
+[0m20:14:01.446468 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7179761e26a0>]}
+[0m20:14:01.448381 [info ] [Thread-1  ]: 1 of 2 OK created sql table model public.cost_by_city_and_state ................ [[32mSELECT 113493[0m in 0.58s]
+[0m20:14:01.450325 [debug] [Thread-1  ]: Finished running node model.cms_dbt.cost_by_city_and_state
+[0m20:14:01.452139 [debug] [Thread-1  ]: Began running node model.cms_dbt.distinct_drgs
+[0m20:14:01.454631 [info ] [Thread-1  ]: 2 of 2 START sql table model public.distinct_drgs .............................. [RUN]
+[0m20:14:01.456735 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.cms_dbt.cost_by_city_and_state, now model.cms_dbt.distinct_drgs)
+[0m20:14:01.458230 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.distinct_drgs
+[0m20:14:01.464093 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.distinct_drgs"
+[0m20:14:01.481791 [debug] [Thread-1  ]: Began executing node model.cms_dbt.distinct_drgs
+[0m20:14:01.492228 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.distinct_drgs"
+[0m20:14:01.510192 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:14:01.511653 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: BEGIN
+[0m20:14:01.512555 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m20:14:01.522500 [debug] [Thread-1  ]: SQL status: BEGIN in 0.010 seconds
+[0m20:14:01.523790 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:14:01.522782 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."distinct_drgs__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT DISTINCT
+    "DRG_Desc"
+FROM "cms_data_db"."public"."cms_data"
+ORDER BY "DRG_Desc"
+  );
+  
+[0m20:14:01.557618 [debug] [Thread-1  ]: SQL status: SELECT 522 in 0.034 seconds
+[0m20:14:01.561712 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:14:01.562474 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+alter table "cms_data_db"."public"."distinct_drgs__dbt_tmp" rename to "distinct_drgs"
+[0m20:14:01.563671 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m20:14:01.565813 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m20:14:01.566899 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:14:01.568115 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m20:14:01.572383 [debug] [Thread-1  ]: SQL status: COMMIT in 0.003 seconds
+[0m20:14:01.575590 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."distinct_drgs__dbt_backup"
+[0m20:14:01.577155 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m20:14:01.577892 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+drop table if exists "cms_data_db"."public"."distinct_drgs__dbt_backup" cascade
+[0m20:14:01.579288 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m20:14:01.580900 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: Close
+[0m20:14:01.582358 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'be72dd93-b917-4a62-bb93-7734ec5aa500', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717978afd070>]}
+[0m20:14:01.583869 [info ] [Thread-1  ]: 2 of 2 OK created sql table model public.distinct_drgs ......................... [[32mSELECT 522[0m in 0.13s]
+[0m20:14:01.585893 [debug] [Thread-1  ]: Finished running node model.cms_dbt.distinct_drgs
+[0m20:14:01.588529 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:01.589496 [debug] [MainThread]: On master: BEGIN
+[0m20:14:01.590116 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:14:01.596474 [debug] [MainThread]: SQL status: BEGIN in 0.006 seconds
+[0m20:14:01.598042 [debug] [MainThread]: On master: COMMIT
+[0m20:14:01.599376 [debug] [MainThread]: Using postgres connection "master"
+[0m20:14:01.600221 [debug] [MainThread]: On master: COMMIT
+[0m20:14:01.601387 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m20:14:01.602174 [debug] [MainThread]: On master: Close
+[0m20:14:01.603181 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:14:01.603964 [debug] [MainThread]: Connection 'model.cms_dbt.distinct_drgs' was properly closed.
+[0m20:14:01.604927 [info ] [MainThread]: 
+[0m20:14:01.605751 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.92 seconds (0.92s).
+[0m20:14:01.607177 [debug] [MainThread]: Command end result
+[0m20:14:01.711057 [info ] [MainThread]: 
+[0m20:14:01.712593 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:14:01.713871 [info ] [MainThread]: 
+[0m20:14:01.715206 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m20:14:01.717335 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.0685117, "process_user_time": 2.084433, "process_kernel_time": 0.372364, "process_mem_max_rss": "176428", "process_out_blocks": "1648", "process_in_blocks": "0"}
+[0m20:14:01.719485 [debug] [MainThread]: Command `dbt run` succeeded at 20:14:01.719293 after 2.07 seconds
+[0m20:14:01.720760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717979ac73d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717977ea71f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x717977144550>]}
+[0m20:14:01.721797 [debug] [MainThread]: Flushing usage events
+[0m17:29:28.022498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796489fc82e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796488fbb160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7964883da610>]}
+
+
+============================== 17:29:28.043955 | 3a1baef4-83a7-410f-9a5f-86fd3e582958 ==============================
+[0m17:29:28.043955 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:29:28.045516 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '.', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir .', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:29:28.347318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796489ab3730>]}
+[0m17:29:28.407405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7964894efca0>]}
+[0m17:29:28.409630 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m17:29:28.439452 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m17:29:28.746730 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m17:29:28.748084 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m17:29:28.786862 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7964873059a0>]}
+[0m17:29:29.017890 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7964872bad60>]}
+[0m17:29:29.019031 [info ] [MainThread]: Found 2 models, 1 source, 423 macros
+[0m17:29:29.019937 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796487644eb0>]}
+[0m17:29:29.021910 [info ] [MainThread]: 
+[0m17:29:29.023210 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:29:29.030894 [debug] [ThreadPool]: Acquiring new postgres connection 'list_cms_data_db'
+[0m17:29:29.073726 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db"
+[0m17:29:29.074849 [debug] [ThreadPool]: On list_cms_data_db: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:29:29.075616 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:29:29.083844 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.008 seconds
+[0m17:29:29.085617 [debug] [ThreadPool]: On list_cms_data_db: Close
+[0m17:29:29.087710 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_cms_data_db, now list_cms_data_db_public)
+[0m17:29:29.094389 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m17:29:29.095293 [debug] [ThreadPool]: On list_cms_data_db_public: BEGIN
+[0m17:29:29.096370 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m17:29:29.103006 [debug] [ThreadPool]: SQL status: BEGIN in 0.007 seconds
+[0m17:29:29.103914 [debug] [ThreadPool]: Using postgres connection "list_cms_data_db_public"
+[0m17:29:29.104595 [debug] [ThreadPool]: On list_cms_data_db_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "list_cms_data_db_public"} */
+select
+      'cms_data_db' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'cms_data_db' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m17:29:29.108045 [debug] [ThreadPool]: SQL status: SELECT 43 in 0.003 seconds
+[0m17:29:29.110518 [debug] [ThreadPool]: On list_cms_data_db_public: ROLLBACK
+[0m17:29:29.111950 [debug] [ThreadPool]: On list_cms_data_db_public: Close
+[0m17:29:29.123326 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.124302 [debug] [MainThread]: On master: BEGIN
+[0m17:29:29.125056 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:29:29.132265 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m17:29:29.133162 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.134110 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m17:29:29.150913 [debug] [MainThread]: SQL status: SELECT 0 in 0.016 seconds
+[0m17:29:29.152921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796486fef520>]}
+[0m17:29:29.153847 [debug] [MainThread]: On master: ROLLBACK
+[0m17:29:29.154809 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.155517 [debug] [MainThread]: On master: BEGIN
+[0m17:29:29.156607 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m17:29:29.157326 [debug] [MainThread]: On master: COMMIT
+[0m17:29:29.157964 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.158602 [debug] [MainThread]: On master: COMMIT
+[0m17:29:29.159620 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:29:29.160369 [debug] [MainThread]: On master: Close
+[0m17:29:29.161827 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:29:29.163353 [info ] [MainThread]: 
+[0m17:29:29.171586 [debug] [Thread-1  ]: Began running node model.cms_dbt.cost_by_city_and_state
+[0m17:29:29.172674 [info ] [Thread-1  ]: 1 of 2 START sql table model public.cost_by_city_and_state ..................... [RUN]
+[0m17:29:29.173757 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_cms_data_db_public, now model.cms_dbt.cost_by_city_and_state)
+[0m17:29:29.174484 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.cost_by_city_and_state
+[0m17:29:29.183121 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.205391 [debug] [Thread-1  ]: Began executing node model.cms_dbt.cost_by_city_and_state
+[0m17:29:29.244310 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.272745 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.274069 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: BEGIN
+[0m17:29:29.274887 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:29:29.282127 [debug] [Thread-1  ]: SQL status: BEGIN in 0.007 seconds
+[0m17:29:29.283028 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.283782 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT
+    "DRG_Desc", 
+    "Rndrng_Prvdr_City" as "city",
+    "Rndrng_Prvdr_State_Abrvtn" AS "state",
+    AVG("Avg_Tot_Pymt_Amt") AS "avg_charge"
+FROM "cms_data_db"."public"."cms_data"
+GROUP BY "Rndrng_Prvdr_State_Abrvtn", "Rndrng_Prvdr_City", "DRG_Desc"
+  );
+  
+[0m17:29:29.550355 [debug] [Thread-1  ]: SQL status: SELECT 113493 in 0.266 seconds
+[0m17:29:29.557629 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.558684 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+alter table "cms_data_db"."public"."cost_by_city_and_state__dbt_tmp" rename to "cost_by_city_and_state"
+[0m17:29:29.560108 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.000 seconds
+[0m17:29:29.580326 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m17:29:29.581319 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.582091 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: COMMIT
+[0m17:29:29.595466 [debug] [Thread-1  ]: SQL status: COMMIT in 0.012 seconds
+[0m17:29:29.602545 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."cost_by_city_and_state__dbt_backup"
+[0m17:29:29.609079 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.cost_by_city_and_state"
+[0m17:29:29.611126 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.cost_by_city_and_state"} */
+drop table if exists "cms_data_db"."public"."cost_by_city_and_state__dbt_backup" cascade
+[0m17:29:29.612872 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m17:29:29.616865 [debug] [Thread-1  ]: On model.cms_dbt.cost_by_city_and_state: Close
+[0m17:29:29.619533 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7964866e45b0>]}
+[0m17:29:29.620838 [info ] [Thread-1  ]: 1 of 2 OK created sql table model public.cost_by_city_and_state ................ [[32mSELECT 113493[0m in 0.44s]
+[0m17:29:29.621972 [debug] [Thread-1  ]: Finished running node model.cms_dbt.cost_by_city_and_state
+[0m17:29:29.623050 [debug] [Thread-1  ]: Began running node model.cms_dbt.distinct_drgs
+[0m17:29:29.624098 [info ] [Thread-1  ]: 2 of 2 START sql table model public.distinct_drgs .............................. [RUN]
+[0m17:29:29.625141 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.cms_dbt.cost_by_city_and_state, now model.cms_dbt.distinct_drgs)
+[0m17:29:29.626235 [debug] [Thread-1  ]: Began compiling node model.cms_dbt.distinct_drgs
+[0m17:29:29.630971 [debug] [Thread-1  ]: Writing injected SQL for node "model.cms_dbt.distinct_drgs"
+[0m17:29:29.660677 [debug] [Thread-1  ]: Began executing node model.cms_dbt.distinct_drgs
+[0m17:29:29.666796 [debug] [Thread-1  ]: Writing runtime sql for node "model.cms_dbt.distinct_drgs"
+[0m17:29:29.691571 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m17:29:29.692689 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: BEGIN
+[0m17:29:29.693573 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m17:29:29.701944 [debug] [Thread-1  ]: SQL status: BEGIN in 0.008 seconds
+[0m17:29:29.702960 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m17:29:29.704132 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+
+  
+    
+
+  create  table "cms_data_db"."public"."distinct_drgs__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT DISTINCT
+    "DRG_Desc"
+FROM "cms_data_db"."public"."cms_data"
+ORDER BY "DRG_Desc"
+  );
+  
+[0m17:29:29.737319 [debug] [Thread-1  ]: SQL status: SELECT 522 in 0.032 seconds
+[0m17:29:29.741596 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m17:29:29.742613 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+alter table "cms_data_db"."public"."distinct_drgs__dbt_tmp" rename to "distinct_drgs"
+[0m17:29:29.744365 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m17:29:29.749842 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m17:29:29.750816 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m17:29:29.751599 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: COMMIT
+[0m17:29:29.753851 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m17:29:29.757422 [debug] [Thread-1  ]: Applying DROP to: "cms_data_db"."public"."distinct_drgs__dbt_backup"
+[0m17:29:29.759470 [debug] [Thread-1  ]: Using postgres connection "model.cms_dbt.distinct_drgs"
+[0m17:29:29.761111 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "cms_profile", "target_name": "dev", "node_id": "model.cms_dbt.distinct_drgs"} */
+drop table if exists "cms_data_db"."public"."distinct_drgs__dbt_backup" cascade
+[0m17:29:29.762656 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.001 seconds
+[0m17:29:29.764670 [debug] [Thread-1  ]: On model.cms_dbt.distinct_drgs: Close
+[0m17:29:29.765892 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a1baef4-83a7-410f-9a5f-86fd3e582958', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79648900f040>]}
+[0m17:29:29.767509 [info ] [Thread-1  ]: 2 of 2 OK created sql table model public.distinct_drgs ......................... [[32mSELECT 522[0m in 0.14s]
+[0m17:29:29.769207 [debug] [Thread-1  ]: Finished running node model.cms_dbt.distinct_drgs
+[0m17:29:29.772135 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.773034 [debug] [MainThread]: On master: BEGIN
+[0m17:29:29.773675 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m17:29:29.781951 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m17:29:29.783049 [debug] [MainThread]: On master: COMMIT
+[0m17:29:29.784084 [debug] [MainThread]: Using postgres connection "master"
+[0m17:29:29.784937 [debug] [MainThread]: On master: COMMIT
+[0m17:29:29.786407 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m17:29:29.787454 [debug] [MainThread]: On master: Close
+[0m17:29:29.788526 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:29:29.789407 [debug] [MainThread]: Connection 'model.cms_dbt.distinct_drgs' was properly closed.
+[0m17:29:29.790738 [info ] [MainThread]: 
+[0m17:29:29.791682 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.77 seconds (0.77s).
+[0m17:29:29.793149 [debug] [MainThread]: Command end result
+[0m17:29:29.888523 [info ] [MainThread]: 
+[0m17:29:29.890066 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m17:29:29.891013 [info ] [MainThread]: 
+[0m17:29:29.892058 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m17:29:29.893947 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.0613348, "process_user_time": 2.164883, "process_kernel_time": 0.309843, "process_mem_max_rss": "176564", "process_in_blocks": "31488", "process_out_blocks": "1648"}
+[0m17:29:29.895679 [debug] [MainThread]: Command `dbt run` succeeded at 17:29:29.895481 after 2.06 seconds
+[0m17:29:29.896722 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796489fc82e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796489fb9bb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x796488fc4700>]}
+[0m17:29:29.897627 [debug] [MainThread]: Flushing usage events

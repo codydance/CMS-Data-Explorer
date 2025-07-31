@@ -1,0 +1,1 @@
+{"_invocation_id": "3a1baef4-83a7-410f-9a5f-86fd3e582958", "linked": {"0": {"name": "source.cms_dbt.cms_source.cms_data", "type": "source", "succ": [1, 2]}, "1": {"name": "model.cms_dbt.cost_by_city_and_state", "type": "model"}, "2": {"name": "model.cms_dbt.distinct_drgs", "type": "model"}}}

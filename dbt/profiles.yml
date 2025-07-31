@@ -1,0 +1,11 @@
+cms_profile:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres       # the docker-compose service name
+      user: user
+      password: pass
+      dbname: cms_data_db
+      schema: public        # dbt creates models here
+      port: 5432

@@ -1,0 +1,63 @@
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: cms_data_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  airflow:
+    build:
+      context: .
+      dockerfile: dockerfile.airflow 
+    restart: always
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://user:pass@postgres:5432/cms_data_db
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./data:/opt/airflow/data
+      - ./dbt:/opt/airflow/dbt
+      - ./scripts:/opt/airflow/scripts
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    command: > 
+      bash -c "
+          airflow scheduler & airflow webserver
+      "
+
+  airflow-init:
+    image: apache/airflow:2.8.1
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://user:pass@postgres:5432/cms_data_db
+    command: > #in a prod environment, would not create users here
+      bash -c "
+        airflow db migrate &&
+        airflow users create --username admin --password admin --firstname Airflow --lastname Admin --role Admin --email admin@example.com &&
+        echo 'Waiting for DAG to be ready...' &&
+        sleep 30 &&
+        airflow dags unpause cms_etl_pipeline 
+      "
+  streamlit:
+    build:
+      context: .
+      dockerfile: dockerfile.streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - postgres
+    environment:
+        AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://user:pass@postgres:5432/cms_data_db
+
+volumes:
+  pgdata:

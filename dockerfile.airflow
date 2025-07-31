@@ -1,0 +1,10 @@
+# Dockerfile.airflow
+
+FROM apache/airflow:2.8.1
+
+USER airflow
+COPY requirements.txt /
+# Print the contents of requirements.txt (debug step)
+RUN echo "Installing from requirements.txt:" && cat /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
+USER airflow
