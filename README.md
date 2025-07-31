@@ -73,6 +73,7 @@ git clone https://github.com/codydance/CMS-Data-Explorer.git
 cd CMS-Data-Explorer
 
 Start all services:
+
 docker-compose up --build
 
 Airflow UI: http://localhost:8080 (username: admin , password: admin)
