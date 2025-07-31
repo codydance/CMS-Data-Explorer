@@ -67,13 +67,16 @@ cms-data-pipeline/
 
 # Setup Instructions
 Clone the repository:
+
 git clone https://github.com/codydance/CMS-Data-Explorer.git
+
 cd CMS-Data-Explorer
 
 Start all services:
 docker-compose up --build
 
 Airflow UI: http://localhost:8080 (username: admin , password: admin)
+
 Streamlit app: http://localhost:8501
 
 # Running the Pipeline
@@ -97,6 +100,8 @@ Custom Dependencies: Installed via Dockerfile.airflow using requirements.txt.
 
 # Resetting the project:
 docker-compose down -v
+
 docker-compose up --build
-s
+
+
 
